@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "270888006104",
+    "project_id": "postcrap-9b0fc",
+    "storage_bucket": "postcrap-9b0fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270888006104:android:12800068fe5d87affac2ad",
+        "android_client_info": {
+          "package_name": "com.humanrabbits.postcrap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270888006104-5g0tb1nuur7s961o0cmb9mcn31k63k00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6BfBlNtcAnxGlSHK3_rhD26ktGg-wnkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270888006104-5g0tb1nuur7s961o0cmb9mcn31k63k00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
