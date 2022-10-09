@@ -21,7 +21,7 @@ class _PostCardState extends State<PostCard> {
         desc: '',
         crap: 'Creator',
         picture: 'assets/images/image1.png',
-        likes: 10),
+        likes: 3),
     Post(
         profilepics: 'assets/images/pics.png',
         user: 'Anonymous',

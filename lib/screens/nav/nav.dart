@@ -83,7 +83,7 @@ class _NavState extends State<Nav> {
                   label: 'Post'),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/message_inactive.png')),
-                  activeIcon: ImageIcon(AssetImage('assets/images/message_active.png')),
+                  activeIcon: ImageIcon(AssetImage('assets/images/message.png')),
                   label: 'Chat'),
               
                BottomNavigationBarItem(
