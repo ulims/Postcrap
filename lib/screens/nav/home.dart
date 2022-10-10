@@ -35,7 +35,10 @@ class _HomeState extends State<Home> {
         backgroundColor: background,
         automaticallyImplyLeading: false,
         centerTitle: false,
-        title: titletext,
+        title: Padding(
+          padding: const EdgeInsets.only(right: 20),
+          child: titletext,
+        ),
         ),)),
       body: const SafeArea(
         child:  SingleChildScrollView(

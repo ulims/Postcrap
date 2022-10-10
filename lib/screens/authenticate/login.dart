@@ -62,118 +62,116 @@ class _LoginState extends State<Login> {
             const SizedBox(
               height: 40,
             ),
-            Container(
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    TextFormField(
-                      cursorColor: primary100,
-                      validator: (val) =>
-                          val!.isEmpty ? 'Enter your email' : null,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: textColor100,
-                          fontFamily: 'Aeonik'),
-                      decoration: emailInputDecoration,
-                      onChanged: (val) {
-                        setState(() => email = val);
-                      },
-                    ),
-                    const SizedBox(
-                      height: 32,
-                    ),
-                    TextFormField(
-                      cursorColor: primary100,
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: _obscured,
-                      focusNode: textFieldFocusNode,
-                      validator: (val) => val!.length < 6
-                          ? 'Password should be 5+ characters long'
-                          : null,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: textColor100,
-                          fontFamily: 'Aeonik'),
-                      decoration: InputDecoration(
-                        focusedBorder: const UnderlineInputBorder(
+            Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextFormField(
+                    cursorColor: primary100,
+                    validator: (val) =>
+                        val!.isEmpty ? 'Enter your email' : null,
+                    style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: textColor100,
+                        fontFamily: 'Aeonik'),
+                    decoration: emailInputDecoration,
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    },
+                  ),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  TextFormField(
+                    cursorColor: primary100,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: _obscured,
+                    focusNode: textFieldFocusNode,
+                    validator: (val) => val!.length < 6
+                        ? 'Password should be 5+ characters long'
+                        : null,
+                    style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: textColor100,
+                        fontFamily: 'Aeonik'),
+                    decoration: InputDecoration(
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide:
+                            BorderSide(color: textColor100, width: 1.3),
+                      ),
+                      enabledBorder: const UnderlineInputBorder(
                           borderSide:
-                              BorderSide(color: textColor100, width: 1.3),
-                        ),
-                        enabledBorder: const UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: textColor20, width: 0.7)),
-                        hintText: 'Enter password',
-                        hintStyle: const TextStyle(
+                              BorderSide(color: textColor20, width: 0.7)),
+                      hintText: 'Enter password',
+                      hintStyle: const TextStyle(
+                          fontFamily: 'Mabry-Pro',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: textColor20),
+                      suffixIcon: GestureDetector(
+                          onTap: _toggleObscured,
+                          child: Icon(
+                            _obscured
+                                ? Icons.visibility_off_rounded
+                                : Icons.visibility_rounded,
+                            size: 20,
+                            color: _obscured ? textColor40 : textColor100,
+                          )),
+                    ),
+                    onChanged: (val) {
+                      setState(() => password = val);
+                    },
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  TextButton(
+                      onPressed: (() async {}),
+                      child: const Text(
+                        'Forgot password',
+                        style: TextStyle(
                             fontFamily: 'Mabry-Pro',
                             fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: textColor20),
-                        suffixIcon: GestureDetector(
-                            onTap: _toggleObscured,
-                            child: Icon(
-                              _obscured
-                                  ? Icons.visibility_off_rounded
-                                  : Icons.visibility_rounded,
-                              size: 20,
-                              color: _obscured ? textColor40 : textColor100,
-                            )),
-                      ),
-                      onChanged: (val) {
-                        setState(() => password = val);
-                      },
-                    ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    TextButton(
-                        onPressed: (() async {}),
+                            fontWeight: FontWeight.w500,
+                            color: primary100),
+                      )),
+                  const SizedBox(
+                    height: 22,
+                  ),
+                  Container(
+                    height: 50,
+                    width: double.infinity,
+                    color: textColor100,
+                    child: TextButton(
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            setState(() => loading = true);
+                            dynamic result =
+                                await _auth.signIn(email, password);
+                            if (result == null) {
+                              setState(() {
+                                signInError(context);
+                                loading = false;
+                              });
+                            } else {
+                              signInSuccess(context);
+                              
+                            }
+                          }
+                        },
                         child: const Text(
-                          'Forgot password',
+                          'Login',
                           style: TextStyle(
                               fontFamily: 'Mabry-Pro',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: primary100),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w900,
+                              color: background),
                         )),
-                    const SizedBox(
-                      height: 22,
-                    ),
-                    Container(
-                      height: 50,
-                      width: double.infinity,
-                      color: textColor100,
-                      child: TextButton(
-                          onPressed: () async {
-                            if (_formKey.currentState!.validate()) {
-                              setState(() => loading = true);
-                              dynamic result =
-                                  await _auth.signIn(email, password);
-                              if (result == null) {
-                                setState(() {
-                                  signInError(context);
-                                  loading = false;
-                                });
-                              } else {
-                                signInSuccess(context);
-                                
-                              }
-                            }
-                          },
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
-                                fontFamily: 'Mabry-Pro',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w900,
-                                color: background),
-                          )),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
             const Spacer(),

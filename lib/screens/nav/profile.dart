@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:postcrap/screens/edit_profile.dart';
 import 'package:postcrap/services/auth.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/widget/text.dart';
@@ -34,7 +35,10 @@ class _ProfileState extends State<Profile> {
         backgroundColor: background,
         automaticallyImplyLeading: false,
         centerTitle: false,
-        title: chattext,
+        title: Padding(
+          padding: const EdgeInsets.only(right: 20),
+          child: chattext,
+        ),
         actions: const[
          Padding(padding: EdgeInsets.only(right: 20,top: 10),
          child: ImageIcon(AssetImage('assets/images/prices.png'),
@@ -65,7 +69,7 @@ class _ProfileState extends State<Profile> {
                   color: textColor3,
                   image: const DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/images/profile.png')
+                  image: AssetImage('assets/images/profile_pics.png')
                   )
                   ),
                 ),
@@ -92,7 +96,10 @@ class _ProfileState extends State<Profile> {
                   color: background
                 ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                builder: ((context) => const EditProfile())));
+                },
               ),
           ),
           const SizedBox(width: 10,),
@@ -144,7 +151,7 @@ class _ProfileState extends State<Profile> {
           ),
           const SizedBox(height: 5,),
           const Text(
-            'Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt utlaore et dolore magna aliqua.',
+            'Once upon a time, i downloaded this app.',
             style: TextStyle(
               fontFamily: 'Mabry-Pro',
               fontSize: 15,
@@ -155,17 +162,17 @@ class _ProfileState extends State<Profile> {
               ),
           const SizedBox(height: 15,),
           Row(
-            children: const [
-              SizedBox(
+            children:  [
+              const SizedBox(
                 height: 13,
                 width: 10,
                 child: ImageIcon(AssetImage('assets/images/user.png'),
                 color: textColor100,
                 ),
               ),
-               SizedBox(width: 6,),
-              Text(
-                '14 Followers',
+               const SizedBox(width: 6,),
+              const Text(
+                '0 Followers',
                 style: TextStyle(
                   fontFamily: 'Mabry-Pro',
                   fontSize: 13,
@@ -173,17 +180,15 @@ class _ProfileState extends State<Profile> {
                   color: textColor100
                 ),
                 ),
-              SizedBox(width: 12,),
+              const SizedBox(width: 15,),
               SizedBox(
-                height: 13,
-                width: 13,
-                child: ImageIcon(AssetImage('assets/images/post.png'),
-                color: primary100,
-                ),
+                height: 14,
+                width: 14,
+                child: Image.asset('assets/images/post.png'),
               ),
-               SizedBox(width: 6,),
-              Text(
-                '1 post',
+               const SizedBox(width: 6,),
+              const Text(
+                '0 post',
                 style: TextStyle(
                   fontFamily: 'Mabry-Pro',
                   fontSize: 13,
@@ -191,8 +196,33 @@ class _ProfileState extends State<Profile> {
                   color: textColor100
                 ),
                 ),
-
             ],
+          ),
+          const SizedBox(height: 7,),
+          const Divider(color: textColor10,),
+          SizedBox(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 120,),
+                SizedBox(
+                  height: 110,
+                  width: 110,
+                  child: Image.asset('assets/images/no.png',)),
+                  const SizedBox(height: 7,),
+                  const Text(
+                  'No post yet',
+                  style: TextStyle(
+                    fontFamily: 'Mabry-Pro',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: textColor100
+                  ),
+                    )
+              ],
+            ),
+          ),
           )
           ],
           ),

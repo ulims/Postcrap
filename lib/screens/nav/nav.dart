@@ -65,30 +65,40 @@ class _NavState extends State<Nav> {
                 fontWeight: FontWeight.w400,
                 height: 1.5),
             type: BottomNavigationBarType.fixed,
-            items: const[
+            items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/home_inactive.png')),
-                activeIcon: ImageIcon(AssetImage('assets/images/home_active.png')),
+                icon: const ImageIcon(AssetImage('assets/images/home_inactive.png')),
+                activeIcon: SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: Image.asset('assets/images/home.png')),
                 label: 'Home',
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('assets/images/search_active.png')),
                   activeIcon: ImageIcon(AssetImage('assets/images/search_inactive.png')),
                   label: 'Mining'),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/add_inactive.png')),
-                  activeIcon: Icon(
-                    Icons.add_circle_rounded,
-                    size: 28,),
+                  icon: const ImageIcon(AssetImage('assets/images/add_inactive.png')),
+                  activeIcon: SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: Image.asset('assets/images/add.png')),
                   label: 'Post'),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/message_inactive.png')),
-                  activeIcon: ImageIcon(AssetImage('assets/images/message.png')),
+                  icon: const ImageIcon(AssetImage('assets/images/message_inactive.png')),
+                  activeIcon: SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: Image.asset('assets/images/message.png')),
                   label: 'Chat'),
               
-               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage('assets/images/profile_inactive.png')),
-                  activeIcon: ImageIcon(AssetImage('assets/images/profile_active.png')),
+                BottomNavigationBarItem(
+                  icon: const ImageIcon(AssetImage('assets/images/profile_inactive.png')),
+                  activeIcon: SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: Image.asset('assets/images/profile.png')),
                   label: 'Profile'),
             ],
             currentIndex: _selectedTabIndex,
