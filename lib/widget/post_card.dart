@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:postcrap/models/post_model.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/shared/like.dart';
-import 'package:postcrap/widget/text.dart';
 
 class PostCard extends StatefulWidget {
   const PostCard({Key? key}) : super(key: key);
@@ -129,7 +126,7 @@ class _PostCardState extends State<PostCard> {
         ),
         ),
         const SizedBox(width: 20,),
-        Container(
+        const SizedBox(
           height: 24,
           width: 24,
           child: ImageIcon(
