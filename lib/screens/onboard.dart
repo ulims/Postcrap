@@ -18,11 +18,11 @@ class _OnboardState extends State<Onboard> {
   List<OnboardModel> screens = <OnboardModel>[
     OnboardModel(
       img: 'assets/images/onboard 2.png', 
-      text: 'Enjoy the best of funny memes', 
+      text: 'Easy way to trade cryptocurrency', 
       desc: 'Express your creativity with using our appa using our premium services loerm ipsum ipsum lorem.'),
     OnboardModel(
       img: 'assets/images/onboard 1.png', 
-      text: 'Make people laugh and Earn', 
+      text: 'Easy way to Invest Easily', 
       desc: 'Express your creativity with using our appa using our premium services loerm ipsum ipsum lorem.'),
   ];
 

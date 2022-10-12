@@ -37,7 +37,7 @@ class _ProfileState extends State<Profile> {
         centerTitle: false,
         title: Padding(
           padding: const EdgeInsets.only(right: 20),
-          child: chattext,
+          child: text1
         ),
         actions: const[
          Padding(padding: EdgeInsets.only(right: 20,top: 10),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:postcrap/shared/constants.dart';
-import 'package:postcrap/shared/input_constant.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);

@@ -29,7 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.0.15  
+  shared_preferences: ^2.0.15 
+  type_text: ^1.0.3
+  pretty_qr_code: ^2.0.2
+  intl: ^0.17.0
+  http: ^0.13.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -93,6 +97,12 @@ flutter:
         - asset: assets/fonts/Aeonik-Light.otf
         - asset: assets/fonts/Aeonik-Medium.otf
         - asset: assets/fonts/Aeonik-Regular.otf
+    
+    - family: Neue Machina
+      fonts:
+        - asset: assets/fonts/NeueMachina-Light.otf
+        - asset: assets/fonts/NeueMachina-Regular.otf
+        - asset: assets/fonts/NeueMachina-Ultrabold.otf
          
   #
   # For details regarding fonts from package dependencies,

@@ -109,7 +109,7 @@ final titletext = TweenAnimationBuilder(
 );
 
 
-final chattext = TweenAnimationBuilder(
+final text1 = TweenAnimationBuilder(
   tween: Tween<double>(begin: 0, end: 1),
   duration: const Duration(milliseconds: 500),
   curve: Curves.easeIn,
@@ -123,11 +123,34 @@ final chattext = TweenAnimationBuilder(
   );
   },
   child: const Text(
-  'Profile',
+  'Main Account Balance',
   style: TextStyle(
-  fontFamily: 'Aeonik',
-  fontSize: 22,
-  fontWeight: FontWeight.w700,
-  color: textColor100,)
+  fontFamily: 'Mabry-Pro',
+  fontSize: 13,
+  fontWeight: FontWeight.w300,
+  color: textColor40,)
+  ),
+);
+
+final text2 = TweenAnimationBuilder(
+  tween: Tween<double>(begin: 0, end: 1),
+  duration: const Duration(milliseconds: 500),
+  curve: Curves.easeIn,
+  builder: (BuildContext context, double val, Widget? child) {
+  return Opacity(
+    opacity: val,
+    child: Padding(
+    padding: EdgeInsets.only(top: val * 1),
+    child: child,
+    ),
+  );
+  },
+  child: const Text(
+  'Send',
+  style: TextStyle(
+  fontFamily: 'Mabry-Pro',
+  fontSize: 14,
+  fontWeight: FontWeight.w300,
+  color: background,)
   ),
 );
