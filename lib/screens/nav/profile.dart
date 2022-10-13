@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:postcrap/screens/edit_profile.dart';
 import 'package:postcrap/services/auth.dart';
 import 'package:postcrap/shared/constants.dart';
@@ -31,6 +32,11 @@ class _ProfileState extends State<Profile> {
         ]
         ),
         child: AppBar(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light
+      ),
         elevation: 0.0,
         backgroundColor: background,
         automaticallyImplyLeading: false,

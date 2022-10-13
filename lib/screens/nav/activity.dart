@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/widget/text.dart';
 
@@ -27,13 +28,26 @@ class _ActivityState extends State<Activity> {
         ]
         ),
         child: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light
+        ),
         elevation: 0.0,
         backgroundColor: background,
         automaticallyImplyLeading: false,
         centerTitle: false,
-        title: Padding(
-          padding: const EdgeInsets.only(right: 20),
-          child: titletext,
+        title: const Padding(
+          padding: EdgeInsets.only(right: 20,top: 10),
+          child: Text(
+            'Activity',
+            style: TextStyle(
+              fontFamily: 'Mabry-Pro',
+              fontSize: 18,
+              fontWeight: FontWeight.w900,
+              color: textColor100
+            ),
+            ),
         ),
         ),)),
       body: SafeArea(
