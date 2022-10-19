@@ -125,7 +125,7 @@ final text1 = TweenAnimationBuilder(
   child: const Text(
   'Main Account Balance',
   style: TextStyle(
-  fontFamily: 'Aeonik',
+  fontFamily: 'Mabry-Pro',
   fontSize: 13,
   fontWeight: FontWeight.w300,
   color: textColor20,)
@@ -248,3 +248,4 @@ final text2 = TweenAnimationBuilder(
   color: textColor100,)
   ),
 );
+

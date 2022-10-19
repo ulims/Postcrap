@@ -27,7 +27,7 @@ List<AssetModel> sendlist = <AssetModel>[
     imageUrl: 'assets/images/grid_tether.png', 
     name: 'Tether', 
     symbol: 'USDT', 
-    value: 0.00, 
+    value: 3.00, 
     valueUSD: 0.00),
   AssetModel(
     imageUrl: 'assets/images/grid_tron.png', 

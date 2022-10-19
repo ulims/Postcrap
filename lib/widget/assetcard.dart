@@ -106,7 +106,7 @@ List<AssetModel> assetlist = <AssetModel>[
                     style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
-                      color: textColor60,
+                      color: textColor80,
                       fontFamily: 'Mabry-Pro'
                     ),
                     ),

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:postcrap/models/asset_model.dart';
+import 'package:postcrap/screens/transactons/receive_page.dart';
 import 'package:postcrap/screens/transactons/send_page.dart';
 import 'package:postcrap/shared/activity.dart';
 import 'package:postcrap/shared/constants.dart';
+import 'package:postcrap/widget/bottomsheet.dart';
 
 class AssetDetails extends StatelessWidget {
   final AssetModel asset;
   const AssetDetails({Key? key, required this.asset}) : super(key: key);
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -167,69 +167,77 @@ class AssetDetails extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 16,),
-                  Container(
-                    height: 80,
-                    width: MediaQuery.of(context).size.width/3.72,
-                    decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(width: 1, color: textColor10)
-                    ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    child: Center(
-                      child: Column(
-                        children: [
-                        SizedBox(
-                        height: 26,
-                        width: 26,
-                        child: Image.asset('assets/images/sendicon.png'),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: ((context) => ReceivePage(receive: asset))));
+                    },
+                    child: Container(
+                      height: 80,
+                      width: MediaQuery.of(context).size.width/3.72,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(width: 1, color: textColor10)
+                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                      child: Center(
+                        child: Column(
+                          children: [
+                          SizedBox(
+                          height: 26,
+                          width: 26,
+                          child: Image.asset('assets/images/sendicon.png'),
+                          ),
+                        const SizedBox(height: 4,),
+                        const Text('Receive',
+                        style: TextStyle(
+                        fontFamily: 'Mabry-Pro',
+                        fontSize: 14,
+                        color: textColor100,
+                        fontWeight: FontWeight.w400
                         ),
-                      const SizedBox(height: 4,),
-                      const Text('Receive',
-                      style: TextStyle(
-                      fontFamily: 'Mabry-Pro',
-                      fontSize: 14,
-                      color: textColor100,
-                      fontWeight: FontWeight.w400
-                      ),
-                      )
-                        ],
+                        )
+                          ],
+                        ),
                       ),
                     ),
-                  ),
+                    ),
                   ),
                    const SizedBox(width: 16,),
-                 Container(
-                    height: 80,
-                    width: MediaQuery.of(context).size.width/3.72,
-                    decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(width: 1, color: textColor10)
-                    ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    child: Center(
-                      child: Column(
-                        children: [
-                        SizedBox(
-                        height: 26,
-                        width: 26,
-                        child: Image.asset('assets/images/trade_icons.png'),
+                 GestureDetector(
+                  onTap: () => tradebottomsheet(context),
+                   child: Container(
+                      height: 80,
+                      width: MediaQuery.of(context).size.width/3.72,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(width: 1, color: textColor10)
+                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                      child: Center(
+                        child: Column(
+                          children: [
+                          SizedBox(
+                          height: 26,
+                          width: 26,
+                          child: Image.asset('assets/images/trade_icons.png'),
+                          ),
+                        const SizedBox(height: 4,),
+                        const Text('Trade',
+                        style: TextStyle(
+                        fontFamily: 'Mabry-Pro',
+                        fontSize: 14,
+                        color: textColor100,
+                        fontWeight: FontWeight.w400
                         ),
-                      const SizedBox(height: 4,),
-                      const Text('Trade',
-                      style: TextStyle(
-                      fontFamily: 'Mabry-Pro',
-                      fontSize: 14,
-                      color: textColor100,
-                      fontWeight: FontWeight.w400
-                      ),
-                      )
-                        ],
+                        )
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  ),
+                    ),
+                 ),
                 ],
               ),
             const SizedBox(height: 140,),

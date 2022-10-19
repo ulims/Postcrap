@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:postcrap/shared/constants.dart';
-import 'package:postcrap/widget/sendCard.dart';
+import 'package:postcrap/widget/receiveCard.dart';
 
 class ReceiveSelect extends StatelessWidget {
   const ReceiveSelect({Key? key}) : super(key: key);
@@ -58,7 +58,7 @@ class ReceiveSelect extends StatelessWidget {
             child:  Column(
               children: const[
                  SizedBox(height: 20,),
-                SendCard(),
+                ReceiveCard()
               ],
             ),
           ),

@@ -15,6 +15,7 @@ class SendPage extends StatefulWidget {
 
 class _SendPageState extends State<SendPage> {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController addresscontroller = TextEditingController();
   String address = '';
   @override
   Widget build(BuildContext context) {
@@ -90,6 +91,7 @@ class _SendPageState extends State<SendPage> {
                         height: 5,
                       ),
                       TextFormField(
+                        controller: addresscontroller,
                         validator: (value) {
                           if (value!.length < 27 || value.length > 35) {
                             return "Please enter valid address";
@@ -146,7 +148,7 @@ class _SendPageState extends State<SendPage> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       await Navigator.of(context).push(MaterialPageRoute(
-                          builder: ((context) =>  SendAmount(accept: widget.send,))));
+                          builder: ((context) =>  SendAmount(accept: widget.send,address: addresscontroller.text,))));
                     }
                   },
                   child: const Text(

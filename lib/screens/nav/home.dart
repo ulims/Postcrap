@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:postcrap/screens/transactons/receive_select.dart';
 import 'package:postcrap/screens/transactons/send_select.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/widget/assetcard.dart';
+import 'package:postcrap/widget/bottomsheet.dart';
 import 'package:postcrap/widget/text.dart';
 import 'package:type_text/type_text.dart';
 
@@ -90,7 +92,9 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               ),
-              child: IconButton(onPressed: () {}, icon: Image.asset('assets/images/receive.png'),),
+              child: IconButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: ((context) => const ReceiveSelect())));
+              }, icon: Image.asset('assets/images/receive.png'),),
               ),
               const SizedBox(height: 0,),
               receivetext
@@ -105,7 +109,9 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               ),
-              child: IconButton(onPressed: () {}, icon: Image.asset('assets/images/trade.png'),),
+              child: IconButton(onPressed: () {
+              tradebottomsheet(context);
+              }, icon: Image.asset('assets/images/trade.png'),),
               ),
               const SizedBox(height: 0,),
               tradetext
