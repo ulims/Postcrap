@@ -3,8 +3,8 @@ class MarketModel {
   String imageUrl;
   String name;
   String symbol;
-  String price;
-  String percentageChange;
+  double price;
+  double percentageChange;
   String graph;
   String about;
 

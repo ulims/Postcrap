@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:postcrap/screens/status/apecoin_status.dart';
+import 'package:postcrap/screens/status/axie_status.dart';
+import 'package:postcrap/screens/status/bitcoin_status.dart';
+import 'package:postcrap/screens/status/near_status.dart';
+import 'package:postcrap/screens/status/polygon_status.dart';
+import 'package:postcrap/screens/status/ripple_status.dart';
+import 'package:postcrap/screens/status/tether_status.dart';
+import 'package:postcrap/screens/status/tron_status.dart';
 import 'package:postcrap/shared/constants.dart';
+import 'package:postcrap/widget/marketlist.dart';
 
 
 class Market extends StatefulWidget {
@@ -49,76 +58,232 @@ class _MarketState extends State<Market> {
         ),
         ),)),
       body: SafeArea(
-        child: Container(
-        decoration: const BoxDecoration(
-          color: background,
-        boxShadow: [
-        BoxShadow(
-        offset: Offset(0, 0.4,),
-        blurRadius: 0,
-        color: textColor3
-        )
-        ]
-        ),
-          height: 80,
-          width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-            children: [
-            Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: textColor100
+        child: SingleChildScrollView(
+          child: Column(
+          children: [
+          MediaQuery.removePadding(
+            context: context,
+            removeTop: true,
+            removeBottom: true,
+            child: SizedBox(
+              height: 90,
+              child: Container(
+                height: 80,
+                decoration: const BoxDecoration(
+                boxShadow: [
+                BoxShadow(
+                offset: Offset(0, 0.4,),
+                blurRadius: 0,
+                color: textColor10 
+                  )
+                ],
+                color: background
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    children: [
+                      GestureDetector(
+                        onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const BitcoinStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status A.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Bitcoin',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                         onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const TetherStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status B.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Tether',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                         onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const TronStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status C.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Tron',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                         onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const PolygonStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status D.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Polygon',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                      onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const NearStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/near.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Near Pro..',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                      onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const RippleStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status F.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Ripple',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                      onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const ApecoinStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status G.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Apecoin',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      GestureDetector(
+                       onTap:() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (
+                            (context) => const AxieStatus())));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 50, width: 50, child: Image.asset('assets/images/status I.png'),),
+                            const SizedBox(height: 2.5,),
+                            const Text(
+                            'Axie Infinity',
+                            style: TextStyle(
+                            fontFamily: 'Mabry-Pro',
+                            fontSize: 12,
+                            color: textColor100,
+                            fontWeight: FontWeight.w400
+                            ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 22,),
+                      
+                    ],
+                  ),
+                ),
               ),
-              child: Image.asset('assets/images/status A.png'),
             ),
-            const SizedBox(width: 19,),
-            Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: textColor100
-              ),
-              child: Image.asset('assets/images/status B.png'),
             ),
-            const SizedBox(width: 19,),
-            Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: textColor100
-              ),
-              child: Image.asset('assets/images/status C.png'),
+            const SizedBox(height: 20,),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Marketlist(),
             ),
-            const SizedBox(width: 19,),
-            Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: textColor100
-              ),
-              child: Image.asset('assets/images/status D.png'),
-            ),
-            const SizedBox(width: 19,),
-            Container(
-              height: 55,
-              width: 55,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: textColor100
-              ),
-              child: Image.asset('assets/images/status E.png'),
-            ),
-            
+            const SizedBox(height: 20,),
             ],
             ),
-          ),
         ),
       )
     );

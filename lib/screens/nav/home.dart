@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:postcrap/screens/transactons/send_select.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/widget/assetcard.dart';
 import 'package:postcrap/widget/text.dart';
@@ -72,7 +73,9 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               ),
-              child: IconButton(onPressed: () {}, icon: Image.asset('assets/images/send.png'),),
+              child: IconButton(onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: ((context) => const SendSelect())));
+              }, icon: Image.asset('assets/images/send.png'),),
               ),
               const SizedBox(height: 0,),
               sendtext

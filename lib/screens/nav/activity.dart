@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:postcrap/shared/activity.dart';
 import 'package:postcrap/shared/constants.dart';
 import 'package:postcrap/widget/text.dart';
 
@@ -50,11 +51,13 @@ class _ActivityState extends State<Activity> {
             ),
         ),
         ),)),
-      body: SafeArea(
-        child:  Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Text('Home')
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: noActivity,
+          ),
+        ],
       )
     );
   }

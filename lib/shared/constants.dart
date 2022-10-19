@@ -9,7 +9,7 @@ const Color textColor10 = Color(0xffDDDDDE);
 const Color textColor3 = Color(0xffEDEDED);
 const Color tlast = Color(0xffF7F7F7);
 const Color primary100 = Color(0xffFA490F);
-const Color success = Color(0xff1BC57C);
+const Color success = Color(0xff11AA8B);
 const Color background = Color(0xffFFFFFF);
 const Color error = Color(0xffFE5F5F);
 

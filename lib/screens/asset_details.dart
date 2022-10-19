@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:postcrap/models/asset_model.dart';
+import 'package:postcrap/screens/transactons/send_page.dart';
 import 'package:postcrap/shared/activity.dart';
 import 'package:postcrap/shared/constants.dart';
 
@@ -128,36 +129,42 @@ class AssetDetails extends StatelessWidget {
               const SizedBox(height: 35,),
               Row(
                 children: [
-                  Container(
-                    height: 80,
-                    width: MediaQuery.of(context).size.width/3.72,
-                    decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(width: 1, color: textColor10)
-                    ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    child: Center(
-                      child: Column(
-                        children: [
-                        SizedBox(
-                        height: 26,
-                        width: 26,
-                        child: Image.asset('assets/images/sendicon.png'),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: ((context) => SendPage(send: asset))));
+                    },
+                    child: Container(
+                      height: 80,
+                      width: MediaQuery.of(context).size.width/3.72,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(width: 1, color: textColor10)
+                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                      child: Center(
+                        child: Column(
+                          children: [
+                          SizedBox(
+                          height: 26,
+                          width: 26,
+                          child: Image.asset('assets/images/sendicon.png'),
+                          ),
+                        const SizedBox(height: 4),
+                        const Text('Send',
+                        style: TextStyle(
+                        fontFamily: 'Mabry-Pro',
+                        fontSize: 14,
+                        color: textColor100,
+                        fontWeight: FontWeight.w400
                         ),
-                      const SizedBox(height: 5),
-                      const Text('Send',
-                      style: TextStyle(
-                      fontFamily: 'Mabry-Pro',
-                      fontSize: 14,
-                      color: textColor100,
-                      fontWeight: FontWeight.w400
-                      ),
-                      )
-                        ],
+                        )
+                          ],
+                        ),
                       ),
                     ),
-                  ),
+                    ),
                   ),
                   const SizedBox(width: 16,),
                   Container(
@@ -175,9 +182,9 @@ class AssetDetails extends StatelessWidget {
                         SizedBox(
                         height: 26,
                         width: 26,
-                        child: Image.asset('assets/images/receive_icons.png'),
+                        child: Image.asset('assets/images/sendicon.png'),
                         ),
-                      const SizedBox(height: 5,),
+                      const SizedBox(height: 4,),
                       const Text('Receive',
                       style: TextStyle(
                       fontFamily: 'Mabry-Pro',
@@ -209,7 +216,7 @@ class AssetDetails extends StatelessWidget {
                         width: 26,
                         child: Image.asset('assets/images/trade_icons.png'),
                         ),
-                      const SizedBox(height: 5,),
+                      const SizedBox(height: 4,),
                       const Text('Trade',
                       style: TextStyle(
                       fontFamily: 'Mabry-Pro',
