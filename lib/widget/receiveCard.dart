@@ -1,5 +1,5 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:postcrap/models/asset_model.dart';
 import 'package:postcrap/screens/transactons/receive_page.dart';
 import 'package:postcrap/shared/constants.dart';

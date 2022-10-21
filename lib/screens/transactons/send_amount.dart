@@ -136,7 +136,7 @@ class _SendAmountState extends State<SendAmount> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
-                                  'USD',
+                                  'NGN',
                                   style: TextStyle(
                                       fontFamily: 'Mabry-Pro',
                                       fontSize: 13,

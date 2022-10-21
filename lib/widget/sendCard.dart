@@ -1,8 +1,10 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:postcrap/models/asset_model.dart';
 import 'package:postcrap/screens/transactons/send_page.dart';
 import 'package:postcrap/shared/constants.dart';
+import 'dart:io';
 
 class SendCard extends StatefulWidget {
   const SendCard({Key? key}) : super(key: key);
@@ -116,7 +118,7 @@ List<AssetModel> sendlist = <AssetModel>[
                 ),
                 Text(
                 NumberFormat.simpleCurrency(
-                  locale: 'en-us',
+                  locale: Platform.localeName,name: 'NGN',
                   decimalDigits: 2
                 ).format(sendlist[index].valueUSD),
                 style: const TextStyle(

@@ -253,7 +253,7 @@ class _ConfirmTransactionsState extends State<ConfirmTransactions> {
               width: double.infinity,
               color: textColor100,
               child: TextButton(onPressed: (){}, 
-              child: Text('Confirm & Proceed',
+              child: const Text('Confirm & Proceed',
               style: TextStyle(
               fontFamily: 'Mabry-Pro',
               fontSize: 15,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -106,7 +108,7 @@ class AssetDetails extends StatelessWidget {
                 const SizedBox(height: 7,),
                 Text(
                     NumberFormat.simpleCurrency(
-                    locale: 'en-us',
+                    locale: Platform.localeName,name: 'NGN',
                     decimalDigits: 2
                     ).format(asset.valueUSD),
                     style: const TextStyle(

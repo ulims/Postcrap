@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:postcrap/models/asset_model.dart';
 import 'package:postcrap/screens/asset_details.dart';
 import 'package:postcrap/shared/constants.dart';
+import 'dart:io';
 
 class AssetCard extends StatefulWidget {
   const AssetCard({Key? key}) : super(key: key);
@@ -115,7 +116,7 @@ List<AssetModel> assetlist = <AssetModel>[
                 ),
                 Text(
                 NumberFormat.simpleCurrency(
-                  locale: 'en-us',
+                  locale: Platform.localeName,name: 'NGN',
                   decimalDigits: 2
                 ).format(assetlist[index].valueUSD),
                 style: const TextStyle(

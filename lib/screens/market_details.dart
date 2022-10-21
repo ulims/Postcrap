@@ -159,7 +159,7 @@ class MarketDetails extends StatelessWidget {
                     ]),
                   ),
                   const SizedBox(height: 20,),
-                  Container(
+                  SizedBox(
                   height: 260,
                   child: TabBarView(children: [
                   Image.asset(coinPrice.priceChange24H.toDouble() < 0 ? 'assets/images/graph A.png' 

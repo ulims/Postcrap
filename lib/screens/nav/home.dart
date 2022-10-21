@@ -8,6 +8,7 @@ import 'package:postcrap/widget/assetcard.dart';
 import 'package:postcrap/widget/bottomsheet.dart';
 import 'package:postcrap/widget/text.dart';
 import 'package:type_text/type_text.dart';
+import 'dart:io';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -53,7 +54,7 @@ class _HomeState extends State<Home> {
             children: [
               text1,
               const SizedBox(height: 14,),
-              TypeText(  NumberFormat.simpleCurrency(locale: 'en-US', decimalDigits: 2)
+              TypeText(  NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN', decimalDigits: 2)
               .format(00),
               textAlign: TextAlign.center,
               style: const TextStyle(
