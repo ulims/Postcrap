@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:postcrap/screens/nav/activity.dart';
+import 'package:postcrap/screens/nav/savings.dart';
 import 'package:postcrap/screens/nav/home.dart';
 import 'package:postcrap/screens/nav/profile.dart';
 import 'package:postcrap/screens/nav/market.dart';
@@ -15,7 +15,7 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
 
    final List<Widget> _widgetpages = const[
-    Home(), Market(), Activity(), Profile()
+    Home(), Market(), Savings(), Profile()
   ];
 
   int _selectedTabIndex = 0;
@@ -85,13 +85,13 @@ class _NavState extends State<Nav> {
                   label: 'Market'),
               
               BottomNavigationBarItem(
-                  icon: const ImageIcon(AssetImage('assets/images/activity_inactive.png'),
+                  icon: const ImageIcon(AssetImage('assets/images/wallet_inactive.png'),
                   size: 21,),
                   activeIcon: SizedBox(
                     height: 21,
                     width: 21,
-                    child: Image.asset('assets/images/activity.png')),
-                  label: 'Actvity'),
+                    child: Image.asset('assets/images/wallet.png')),
+                  label: 'Savings'),
               
                 BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage('assets/images/more_inactive.png'), size: 21,),

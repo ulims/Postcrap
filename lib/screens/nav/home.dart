@@ -55,11 +55,11 @@ class _HomeState extends State<Home> {
               text1,
               const SizedBox(height: 14,),
               TypeText(  NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN', decimalDigits: 2)
-              .format(00),
+              .format(8),
               textAlign: TextAlign.center,
               style: const TextStyle(
               fontFamily: 'Mabry-Pro',
-              fontSize: 40,
+              fontSize: 36,
               color: background,
               fontWeight: FontWeight.w500,
               ),

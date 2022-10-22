@@ -12,4 +12,6 @@ const Color primary100 = Color(0xffFA490F);
 const Color success = Color(0xff11AA8B);
 const Color background = Color(0xffFFFFFF);
 const Color error = Color(0xffFE5F5F);
+const Color except = Color(0xff4547F5);
+const Color green = Color(0xff0EC074);
 
